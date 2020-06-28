@@ -257,7 +257,7 @@ router 注册类型，我们比较常用的就是 `GET`、`POST`、`PUT`、`DELE
 
 path 是一个匹配 URL 的准则（有点正则表达式的意思），当go-admin 响应一个请求时，它会从注册的url 第一项开始，按照顺序一次匹配，直到找到匹配项。
 
-这些准则不会匹配 GET 和 POST 参数或域名。例如，URL 在处理请求 http://www.zhangwj.com/articleList 时，它会尝试匹配 articleList 。处理请求 http://www.zhangwj.com/articleList?page=3 时，也只会尝试匹配 blog/list。
+这些准则不会匹配 GET 和 POST 参数或域名。例如，URL 在处理请求 http://www.zhangwj.com/articleList 时，它会尝试匹配 articleList 。处理请求 http://www.zhangwj.com/articleList?page=3 时，也只会尝试匹配 articleList。
 
 :::tip 注意
 path 也支持带参数的写法，例如 `r.GET("/articleList/:id",apis.GetArticleList)`, 这个时候会按照这 `/articleList/:id` 进行匹配 `:id` 可以是字符串，可以是数字等任意字符，当然也是可以限制的，这里我们不再展开。
